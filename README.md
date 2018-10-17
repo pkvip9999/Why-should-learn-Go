@@ -2,20 +2,20 @@
 [Source](https://medium.com/exploring-code/why-should-you-learn-go-f607681fad65 "Permalink to Why should you learn Go? – Exploring Code – Medium")
 
 # Tại sao bạn nên học Go?
-Trong vài năm qua, có một sự tăng trưởng của ngôn ngữ lập trình mới: Go hoặc GoLang. Không có gì làm cho developer trở nên điên rồ hơn một ngôn ngữ lập trình mới, đúng không? Vì vậy, tôi bắt đầu học Go trước 4 đến 5 tháng và ở đây tôi sẽ cho bạn biết lý do tại sao bạn cũng nên học ngôn ngữ mới này.
+Trong vài năm qua, có một sự tăng trưởng của ngôn ngữ lập trình mới: Go hoặc GoLang. Không có gì làm cho developer trở nên điên rồ hơn một ngôn ngữ lập trình mới, đúng không? Vì vậy, tôi bắt đầu học Go  4 đến 5 tháng trước và ở đây tôi sẽ cho bạn biết lý do tại sao bạn cũng nên học ngôn ngữ mới này.
 
-Tôi sẽ không dạy bạn, cách bạn có thể viết “Hello World !!” trong bài viết này. Có rất nhiều bài báo online cho điều đó. Tôi sẽ giải thích giai đoạn hiện tại của phần mềm máy tính và tại sao chúng ta cần ngôn ngữ mới như Go? Bởi vì nếu không có vấn đề gì thì chúng ta không cần giải pháp, đúng không?
+Tôi sẽ không dạy bạn, cách bạn có thể viết “Hello World !!” trong bài viết này. Có rất nhiều bài báo online cho điều đó. Tôi sẽ giải thích giai đoạn hiện tại của phần cứng và phần mềm máy tính và tại sao chúng ta cần ngôn ngữ mới như Go? Bởi vì nếu không có vấn đề gì thì chúng ta không cần giải pháp, đúng không?
 ### **Giới hạn về phần cứng:**
-Bộ xử lý Pentium 4 đầu tiên với tốc độ xung nhịp 3.0GHz đã được Intel giới thiệu vào năm 2004. Hiện giờ, Mackbook Pro 2016 của tôi có tốc độ xung nhịp 2,9GHz. Vì vậy, gần một thập kỷ, không có quá nhiều lợi ích trong việc tăng sức mạnh xử lý . Bạn có thể thấy so sánh việc tăng sức mạnh xử lý với thời gian biểu đồ bên dưới
+Bộ xử lý Pentium 4 đầu tiên với tốc độ xung nhịp 3.0GHz đã được Intel giới thiệu vào năm 2004. Hiện giờ, Mackbook Pro 2016 của tôi có tốc độ xung nhịp 2,9GHz. Bởi vì, gần một thập kỷ, không có quá nhiều lợi ích trong việc tăng sức mạnh xử lý . Bạn có thể thấy so sánh việc tăng sức mạnh xử lý với thời gian biểu đồ bên dưới
 
 Từ biểu đồ trên, bạn có thể thấy rằng hiệu suất của một luồng đơn và tần số của bộ xử lý vẫn ổn định trong gần một thập kỷ. Nếu bạn đang nghĩ rằng việc thêm nhiều transistor là giải pháp, thì bạn đã sai. Điều này là do ở quy mô nhỏ hơn, một số tính chất lượng tử bắt đầu nổi lên (như đường hầm) và vì nó thực sự tốn nhiều tiền hơn để đặt nhiều transistor hơn (tại sao?) Và số transistor bạn có thể thêm vào mỗi đô la bắt đầu giảm.
 
 Vì vậy, để giải quyết vấn đề trên,
-  - Các nhà sản xuất bắt đầu bổ sung thêm nhiều nhân hơn cho bộ vi xử lý. Ngày nay chúng tôi có sẵn các CPU 4 nhân và 8 nhân 
+  - Các nhà sản xuất bắt đầu bổ sung thêm nhiều nhân hơn cho bộ vi xử lý. Ngày nay chúng ta có sẵn các CPU 4 nhân và 8 nhân 
   - Chúng tôi cũng giới thiệu về siêu luồng.
   - Đã thêm bộ nhớ cache vào bộ xử lý để tăng hiệu suất
   
-  Nhưng các giải pháp trên cũng có những hạn chế riêng. Chúng tôi không thể thêm nhiều bộ nhớ đệm và nhiều hơn nữa để bộ xử lý tăng hiệu suất như bộ nhớ đệm có giới hạn vật lý: bộ nhớ cache càng lớn, nó càng chậm. Thêm nhiều nhân hơn cho bộ vi xử lý cũng có chi phí của nó. Ngoài ra, điều đó không thể mở rộng đến vô thời hạn. Các bộ vi xử lý đa nhân này có thể chạy đồng thời nhiều luồng và mang lại sự đồng thời về hình ảnh. Chúng ta sẽ thảo luận sau.
+  Nhưng các giải pháp trên cũng có những hạn chế riêng. Chúng ta không thể thêm nhiều bộ nhớ đệm hơn nữa để bộ xử lý tăng hiệu suất vì bộ nhớ đệm có giới hạn vật lý: bộ nhớ cache càng lớn, nó càng chậm. Thêm nhiều nhân hơn cho bộ vi xử lý cũng có chi phí của nó. Ngoài ra, điều đó không thể mở rộng đến vô thời hạn. Các bộ vi xử lý đa nhân này có thể chạy đồng thời nhiều luồng và mang lại sự đồng thời về hình ảnh. Chúng ta sẽ thảo luận sau.
   
 Vì vậy, nếu chúng ta không thể dựa vào những cải tiến phần cứng, cách duy nhất để đi là phần mềm hiệu quả hơn để tăng hiệu suất. Nhưng thật đáng buồn, ngôn ngữ lập trình hiện đại không hiệu quả lắm.
 
@@ -24,7 +24,7 @@ Vì vậy, nếu chúng ta không thể dựa vào những cải tiến phần c
 
 Như chúng ta đã thảo luận ở trên, các nhà sản xuất phần cứng đang thêm nhiều nhân hơn vào các bộ vi xử lý để tăng hiệu năng. Tất cả các trung tâm dữ liệu đang chạy trên các bộ vi xử lý đó và chúng ta sẽ mong đợi sự gia tăng về số nhân trong những năm sắp tới. Thêm vào đó, các ứng dụng ngày nay sử dụng nhiều micro-services để duy trì kết nối cơ sở dữ liệu, message queues và lưu trữ cache. Vì vậy, phần mềm chúng tôi phát triển và các ngôn ngữ lập trình nên hỗ trợ đồng thời một cách dễ dàng và chúng phải có khả năng mở rộng với số lượng nhân tăng lên.
 
-Tuy nhiên, hầu hết các ngôn ngữ lập trình hiện đại (như Java, Python, vv) là từ môi trường luồng đơn 90 '. Hầu hết các ngôn ngữ lập trình đều hỗ trợ đa luồng. Nhưng vấn đề thực sự đi kèm với việc thực hiện đồng thời,threading-locking,, race conditions và deadlocks. **Những điều này làm cho việc tạo một ứng dụng đa luồng trên các ngôn ngữ đó trở nên khó khăn.**
+Tuy nhiên, hầu hết các ngôn ngữ lập trình hiện đại (như Java, Python, vv) là từ môi trường luồng đơn 90 '. Hầu hết các ngôn ngữ lập trình đều hỗ trợ đa luồng. Nhưng khi thực hiện đồng thời thì có vấn để xảy ra,threading-locking,, race conditions và deadlocks. **Những điều này làm cho việc tạo một ứng dụng đa luồng trên các ngôn ngữ đó trở nên khó khăn.**
 
 Ví dụ, tạo một luồng mới trong Java thực sự không hiệu quả về bộ nhớ. Vì mỗi luồng tiêu tốn khoảng 1MB kích thước bộ nhớ heap và cuối cùng nếu bạn bắt đầu chạy hàng nghìn luồng, chúng sẽ gây áp lực rất lớn trên heap và sẽ gây ra shut down do tràn bộ nhớ. Ngoài ra, nếu bạn muốn giao tiếp giữa hai hoặc nhiều luồng, thì sẽ rất khó khăn.
 
